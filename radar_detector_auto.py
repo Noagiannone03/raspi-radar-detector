@@ -177,7 +177,7 @@ class GPSRadarDetector:
         distance = int(radar['distance'])
         speed_limit = radar['speed_limit']
 
-        alert_message = f"Attention! Radar detected {distance} meters ahead. Speed limit {speed_limit} kilometers per hour. Slow down!"
+        alert_message = f"Warning! Radar detected {distance} meters ahead. Speed limit {speed_limit} kilometers per hour. Slow down!"
 
         print(f"🚨 RADAR ALERT: {alert_message}")
         self.speak(alert_message)
