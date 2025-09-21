@@ -83,12 +83,12 @@ class GPSRadarDetector:
             with open(self.csv_file_path, 'r', encoding='utf-8') as file:
                 csv_reader = csv.reader(file, delimiter=';')
                 for row in csv_reader:
-                    if len(row) >= 6:
+                    if len(row) >= 5:
                         try:
                             radar_id = row[0]
                             lat = float(row[3])
                             lon = float(row[4])
-                            speed_limit = int(row[5])
+                            speed_limit = int(row[5]) if len(row) > 5 and row[5] else 50
 
                             self.radar_points.append({
                                 'id': radar_id,
@@ -216,6 +216,7 @@ class GPSRadarDetector:
 
         if not self.connect_wifi():
             print("Cannot start without WiFi connection")
+            self.speak("WiFi connection failed. Cannot start GPS detection. Please check WiFi configuration.")
             return False
 
         self.load_radar_database()
