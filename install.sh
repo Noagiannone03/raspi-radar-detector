@@ -17,7 +17,7 @@ apt-get install -y python3 python3-pip espeak alsa-utils gpsd gpsd-clients
 pip3 install gpsd-py3
 
 # Create project directory
-PROJECT_DIR="/home/pi/radar-detector"
+PROJECT_DIR="/home/$SUDO_USER/radar-detector"
 mkdir -p $PROJECT_DIR
 
 # Copy files to project directory
@@ -39,7 +39,7 @@ systemctl daemon-reload
 systemctl enable radar_detector.service
 
 # Set permissions
-chown -R pi:pi $PROJECT_DIR
+chown -R $SUDO_USER:$SUDO_USER $PROJECT_DIR
 
 echo ""
 echo "Installation complete!"

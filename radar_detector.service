@@ -5,10 +5,10 @@ Wants=network.target
 
 [Service]
 Type=simple
-User=pi
-Group=pi
-WorkingDirectory=/home/pi/radar-detector
-ExecStart=/usr/bin/python3 /home/pi/radar-detector/radar_detector_auto.py /home/pi/radar-detector/radars.csv
+User=noagiannone
+Group=noagiannone
+WorkingDirectory=/home/noagiannone/radar-detector
+ExecStart=/usr/bin/python3 /home/noagiannone/radar-detector/radar_detector_auto.py /home/noagiannone/radar-detector/radars.csv
 Restart=always
 RestartSec=10
 StandardOutput=journal
