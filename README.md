@@ -20,7 +20,7 @@ This system automatically detects speed cameras/radars based on GPS location and
 
 2. **Place your radar CSV file:**
    ```bash
-   sudo cp your_radars.csv /home/pi/radar-detector/radars.csv
+   sudo cp your_radars.csv /home/noagiannone/radar-detector/radars.csv
    ```
 
 3. **Configure WiFi (if not already done):**
